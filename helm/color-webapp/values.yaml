@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: preethyvenkat1122/color-webapp
+  tag: v6.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+color: blue

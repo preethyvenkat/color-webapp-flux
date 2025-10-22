@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: color-webapp-blue
+  namespace: default
+spec:
+  interval: 1m
+  releaseName: color-webapp-blue
+  chart:
+    spec:
+      chart: ./helm/color-webapp
+      sourceRef:
+        kind: GitRepository
+        name: color-webapp-flux-helm
+        namespace: flux-system
+      interval: 1m
+  values:
+    image:
+      repository: preethyvenkat1122/color-webapp
+      tag: v6.1
+    color: blue
